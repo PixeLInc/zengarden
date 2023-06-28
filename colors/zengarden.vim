@@ -64,14 +64,15 @@ if !exists('g:zengarden_contrast_light')
   let g:zengarden_contrast_light='medium'
 endif
 
-let s:is_dark=(&background == 'dark')
+let s:is_dark=1
 
 let s:zg = {}
 
 let s:zg.dark0_hard  = ['#2e3132', 236]
-let s:zg.dark0       = ['#353839', 235]
+" let s:zg.dark0       = ['#353839', 235]
+let s:zg.dark0 = ['#1a1b1b', 235]
 let s:zg.dark0_soft  = ['#393c3d', 234]
-let s:zg.dark1       = ['#444748', 237]
+let s:zg.dark1       = ['#2e3132', 237]
 let s:zg.dark2       = ['#505354', 239]
 let s:zg.dark3       = ['#5c5f60', 241]
 let s:zg.dark4       = ['#686b6c', 243]
@@ -142,67 +143,35 @@ let s:vim_bg = ['bg', 'bg']
 let s:vim_fg = ['fg', 'fg']
 let s:none = ['NONE', 'NONE']
 
-if s:is_dark
-  let s:bg0  = s:zg.dark0
-  if g:zengarden_contrast_dark == 'soft'
-    let s:bg0  = s:zg.dark0_soft
-  elseif g:zengarden_contrast_dark == 'hard'
-    let s:bg0  = s:zg.dark0_hard
-  endif
+let s:bg0  = s:zg.dark0
+" if g:zengarden_contrast_dark == 'soft'
+"   let s:bg0  = s:zg.dark0_soft
+" elseif g:zengarden_contrast_dark == 'hard'
+"   let s:bg0  = s:zg.dark0_hard
+" endif
 
-  let s:bg1  = s:zg.dark1
-  let s:bg2  = s:zg.dark2
-  let s:bg3  = s:zg.dark3
-  let s:bg4  = s:zg.dark4
+let s:bg1  = s:zg.dark1
+let s:bg2  = s:zg.dark2
+let s:bg3  = s:zg.dark3
+let s:bg4  = s:zg.dark4
 
-  let s:gray = s:zg.gray_245
+let s:gray = s:zg.gray_245
 
-  let s:fg0 = s:zg.light0
-  let s:fg1 = s:zg.light1
-  let s:fg2 = s:zg.light2
-  let s:fg3 = s:zg.light3
-  let s:fg4 = s:zg.light4
+let s:fg0 = s:zg.light0
+let s:fg1 = s:zg.light1
+let s:fg2 = s:zg.light2
+let s:fg3 = s:zg.light3
+let s:fg4 = s:zg.light4
 
-  let s:fg4_256 = s:zg.light4_256
+let s:fg4_256 = s:zg.light4_256
 
-  let s:red    = s:zg.bright_red
-  let s:green  = s:zg.bright_green
-  let s:yellow = s:zg.bright_yellow
-  let s:blue   = s:zg.bright_blue
-  let s:purple = s:zg.bright_purple
-  let s:aqua   = s:zg.bright_aqua
-  let s:orange = s:zg.bright_orange
-else
-  let s:bg0  = s:zg.light0
-  if g:zengarden_contrast_light == 'soft'
-    let s:bg0  = s:zg.light0_soft
-  elseif g:zengarden_contrast_light == 'hard'
-    let s:bg0  = s:zg.light0_hard
-  endif
-
-  let s:bg1  = s:zg.light1
-  let s:bg2  = s:zg.light2
-  let s:bg3  = s:zg.light3
-  let s:bg4  = s:zg.light4
-
-  let s:gray = s:zg.gray_244
-
-  let s:fg0 = s:zg.dark0
-  let s:fg1 = s:zg.dark1
-  let s:fg2 = s:zg.dark2
-  let s:fg3 = s:zg.dark3
-  let s:fg4 = s:zg.dark4
-
-  let s:fg4_256 = s:zg.dark4_256
-
-  let s:red    = s:zg.faded_red
-  let s:green  = s:zg.faded_green
-  let s:yellow = s:zg.faded_yellow
-  let s:blue   = s:zg.faded_blue
-  let s:purple = s:zg.faded_purple
-  let s:aqua   = s:zg.faded_aqua
-  let s:orange = s:zg.faded_orange
-endif
+let s:red    = s:zg.bright_red
+let s:green  = s:zg.bright_green
+let s:yellow = s:zg.bright_yellow
+let s:blue   = s:zg.bright_blue
+let s:purple = s:zg.bright_purple
+let s:aqua   = s:zg.bright_aqua
+let s:orange = s:zg.bright_orange
 
 if g:zengarden_termcolors == 16
   let s:bg0[1]    = 0
